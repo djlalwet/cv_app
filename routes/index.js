@@ -14,9 +14,6 @@ var languagesinfo = require('../public/javascripts/languages.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log("in router");
-  console.log(languagesinfo);
-
   if (req.session.show_all){
     res.render('index', { title: 'DL', languages: languagesinfo, show_all: true });
   }
@@ -28,7 +25,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 
-  console.log(req.body.password);
   var password = req.body.password;
 
   if ("dan" === password)
