@@ -1,0 +1,16 @@
+div(id="techbackground" class="container section")
+  h4 TECHNICAL KNOWLEDGE AND SKILLS
+  div(class="col-md-10 col-md-offset-1 experience")
+    -console.log("in page");
+    -console.log(languages);
+    for language in languages
+      div(class="col-md-3 techimg text-center")
+        div(class="col-md-3 image")
+          img(id="svn" src="#{language.imagePath}")
+        div(class="col-md-12 info")
+          h6 #{language.type}
+          h5 #{language.name}
+          h6 Years of Work Experience
+          | #{language.yearsOfExp}
+          h6 Skill Level
+          | #{language.skillLevel}
