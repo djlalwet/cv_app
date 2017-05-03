@@ -1,10 +1,10 @@
-div(id="techbackground" class="container section")
+div(id="techbackground" class="container text-center section")
   h4 TECHNICAL KNOWLEDGE AND SKILLS
   div(class="col-md-10 col-md-offset-1 experience")
     for language in languages
       div(class="col-md-3 techimg text-center")
         div(class="col-md-3 image")
-          span(class="helper")
+          span(class="vcenter")
           img(id="svn" src="#{language.imagePath}")
         div(class="col-md-12 info")
           h6 #{language.type}
