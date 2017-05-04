@@ -135,10 +135,22 @@ ul {
 
 .education {
   height: 400px;
+  border-radius: 25px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #3c3c3c;
   background-image: url(/images/upday.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.education h4, h5 {
+  color: #2c2c2c !important;
+}
+
+.education p {
+  color: #3c3c3c !important;
 }
 
 .education img#upd {
@@ -146,11 +158,11 @@ ul {
   max-width: 70%;
 }
 
-/*.education img#dcs {
-  height: 150px;
-  width: 150px;
+.education img#dcs {
+  max-height: 70%;
+  max-width: 70%;
 }
-*/
+
 
 /*EDUCATION END*/
 
