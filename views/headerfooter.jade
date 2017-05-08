@@ -1,13 +1,13 @@
 div(id="headerbar" class="navbar navbar-default navbar-fixed-top" role="navigation")
   div(class="container")
     div(class="navbar-header col-md-12")
-      button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse")
+      button(type="button" class="navbar-toggle btn-nav" data-toggle="collapse" data-target="#header")
         span(class="icon-bar")
         span(class="icon-bar")
         span(class="icon-bar")
       a(href="#" class="navbar-brand") Daniel John M. Lalwet
 
-    div(class='navbar-collapse collapse')
+    div(class="navbar-collapse collapse header" id="header")
       ul(class="nav navbar-nav")
         li
           a(href="#careerstatement")
@@ -26,22 +26,34 @@ div(id="headerbar" class="navbar navbar-default navbar-fixed-top" role="navigati
             span(class="glyphicon glyphicon-wrench" aria-hidden="true")
             |  Professional Background
 
-div(id="footerbar" class="navbar navbar-default navbar-fixed-bottom" role="navigation")
+div(id="footerbar" class="navbar navbar-default navbar-fixed-bottom")
   div(class="container")
-    div(class="navbar-footer")
-      p(class="navbar-text navbar-right") 5/24 Stalker Road, Gosnells, WA 6110
-      p(class="navbar-text navbar-right") dj.lalwet@gmail.com
-      p(class="navbar-text navbar-right") 0413299792
-      p(class="navbar-text navbar-right") Contact:
+    div(class="row")
+      div(class="col-md-4 col-sm-5 col-xs-5")
+        if show_all
+          form(action="/clear" class="navbar-form navbar-left" method="post")
+            button(type="submit" class="btn btn-default" value="submit")
+              | Hide Sensitive Information
+        else
+          form(action="/" class="navbar-form navbar-left" method="post")
+            div(class="form-group")
+              input(type="password" class="form-control password" placeholder="Access Password" name="password")
+              button(type="submit" class="btn btn-default" value="submit")
+                | Submit
 
-      if show_all
-        form(action="/clear" class="navbar-form navbar-left" method="post")
-          button(type="submit" class="btn btn-default" value="submit")
-            | Hide Sensitive Information
-      else
-        form(action="/" class="navbar-form navbar-left" method="post")
-          div(class="form-group")
-            input(type="password" class="form-control" placeholder="Access Password" name="password")
-          button(type="submit" class="btn btn-default" value="submit")
-            | Submit
+      div(class="navbar-footer col-md-8  col-sm-7 col-xs-7")
 
+        div(class="navbar-collapse collapse text-center" id="footer")
+          ul(class="nav navbar-nav")
+            li
+              span(class="glyphicon glyphicon-phone" aria-hidden="true")
+              |  0413299792
+            li
+              span(class="glyphicon glyphicon-envelope" aria-hidden="true")
+              |  dj.lalwet@gmail.com
+            li
+              span(class="glyphicon glyphicon-home" aria-hidden="true")
+              |  5/24 Stalker Road, Gosnells, WA 6110
+
+        button(type="button" class="navbar-toggle btn-contact" data-toggle="collapse" data-target="#footer")
+          | Contact
