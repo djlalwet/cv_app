@@ -40,7 +40,7 @@ var languages = [
     "name" : "JIRA",
     "type" : "Project Tool",
     "yearsOfExp" : 3,
-    "skillLevel" : "Competent",
+    "skillLevel" : "Proficient",
     "imagePath" : "images/jira.png"
 },
 
@@ -49,7 +49,7 @@ var languages = [
     "name" : "CONFLUENCE",
     "type" : "Project Tool",
     "yearsOfExp" : 3,
-    "skillLevel" : "Competent",
+    "skillLevel" : "Proficient",
     "imagePath" : "images/confluence.png"
 },
 
@@ -58,7 +58,7 @@ var languages = [
     "name" : "FISHEYE",
     "type" : "Project Tool",
     "yearsOfExp" : 3,
-    "skillLevel" : "Competent",
+    "skillLevel" : "Proficient",
     "imagePath" : "images/Fisheye.png"
 },
 
@@ -67,7 +67,7 @@ var languages = [
     "name" : "HTML",
     "type" : "Front-end",
     "yearsOfExp" : 2,
-    "skillLevel" : "Proficent",
+    "skillLevel" : "Proficient",
     "imagePath" : "images/HTML5_Logo_512.png"
 },
 

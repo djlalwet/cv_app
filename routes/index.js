@@ -1,39 +1,24 @@
 var express = require('express');
 var router = express.Router();
-
-// connect to database
-// var mongoose = require('mongoose');
-// mongoose.Promise = require('bluebird');
 var User = require('../public/javascripts/user.js');
 var Language = require('../public/javascripts/language.js');
 var languagesinfo = require('../public/javascripts/languages.js');
 
-// console.log("connecting...")
-// mongoose.connect('mongodb://localhost/test');
-// console.log ("connection successful");
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  if (req.session.show_all){
-    res.render('index', { title: 'DL', languages: languagesinfo, show_all: true });
-  }
-  else{
-    res.render('index', { title: 'DL', languages: languagesinfo, show_all: false });
-  }
-
+  res.render('index', { title: 'CV - Daniel Lalwet',
+    languages: languagesinfo, show_all: req.session.show_all });
 });
 
 router.post('/', function(req, res, next) {
 
-  var password = req.body.password;
+  req.session.show_all = false;
 
-  if ("dan" === password)
+  if ("dan" === req.body.password)
   {
     req.session.show_all = true;
   }
-  else{
-    req.session.show_all = false;
-  }
+
   res.redirect('/');
 
 });
