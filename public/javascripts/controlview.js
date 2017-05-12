@@ -1,7 +1,9 @@
 $(function(){
 
   $('#header').click(function(){
-    $('.btn-nav').click();
+    if($(window).width() < 768){
+      $('.btn-nav').click();
+    }
   });
 
   $('.infobutton').click(function(){
