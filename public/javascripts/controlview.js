@@ -4,44 +4,26 @@ $(function(){
     $('.btn-nav').click();
   });
 
-  $('#readmorenokia').click(function(){
-    console.log("read more nokia");
-    $('#infonokia').show();
-    $('#readlessnokia').show();
-    $('#readmorenokia').hide();
-  });
-
-  $('#readlessnokia').click(function(){
-    console.log("read less nokia");
-    $('#infonokia').hide();
-    $('#readlessnokia').hide();
-    $('#readmorenokia').show();
-  });
-
-  $('#readmorecanon').click(function(){
-    $('#infocanon').show();
-    $('#readlesscanon').show();
-    $('#readmorecanon').hide();
-  });
-
-  $('#readlesscanon').click(function(){
-    $('#infocanon').hide();
-    $('#readlesscanon').hide();
-    $('#readmorecanon').show();
+  $('.infobutton').click(function(){
+    var targetinfo = $(this).attr("target");
+    var button = $(this);
+    $(targetinfo).slideToggle(function(){
+      button.text("Show Projects...");
+      button.append("<span aria-hidden=\"true\" class=\"glyphicon glyphicon-chevron-down\"></span>");
+      if($(this).is(":visible")){
+        button.text("Hide Projects...");
+        button.append("<span aria-hidden=\"true\" class=\"glyphicon glyphicon-chevron-up\"></span>");
+      }
+    });
   });
 
   $('.techimg').mouseenter(function(){
     $(this).css('opacity', '1');
-
-  });
-
-  $('.techimg').mouseleave(function(){
+  }).mouseleave(function(){
     $(this).css('opacity', '0.5');
     $(this).find('.info').hide();
     $(this).find('.image').show();
-  });
-
-  $('.techimg').click(function(){
+  }).click(function(){
     $(this).find('.info').show();
     $(this).find('.image').hide();
   });
@@ -51,30 +33,18 @@ $(function(){
     var success = referencesinfo.parentNode.removeChild(referencesinfo);
   });
 
-  // The function actually applying the offset
   function offsetAnchor() {
     if (location.hash.length !== 0) {
       window.scrollTo(window.scrollX, window.scrollY - 90);
     }
   }
 
-  // Captures click events of all <a> elements with href starting with #
   $(document).on('click', 'a[href^="#"]', function(event) {
-    // Click events are captured before hashchanges. Timeout
-    // causes offsetAnchor to be called after the page jump.
     window.setTimeout(function() {
       offsetAnchor();
     }, 0);
   });
 
-  // Set the offset when entering page with hash present in the url
   window.setTimeout(offsetAnchor, 0);
-     // var navMain = $(".navbar-collapse"); // avoid dependency on #id
-     // // "a:not([data-toggle])" - to avoid issues caused
-     // // when you have dropdown inside navbar
-     // navMain.on("click", "a:not([data-toggle])", null, function () {
-     //     navMain.collapse('hide');
-     // });
 
  });
-
