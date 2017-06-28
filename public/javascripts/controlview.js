@@ -30,11 +30,6 @@ $(function(){
     $(this).find('.image').hide();
   });
 
-  $('#hidereferences').click(function(){
-    var referencesinfo = document.getElementById('referencesinfo');
-    var success = referencesinfo.parentNode.removeChild(referencesinfo);
-  });
-
   function offsetAnchor() {
     if (location.hash.length !== 0) {
       window.scrollTo(window.scrollX, window.scrollY - 90);

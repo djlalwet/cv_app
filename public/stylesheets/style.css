@@ -232,6 +232,18 @@ ul {
 
 /*PROBACKGROUND END*/
 
+/*SAMPLEWORK START*/
+
+/*SAMPLEWORK END*/
+
+#samplework h5{
+  text-transform: none !important;
+}
+
+#samplework p{
+  margin: 7px 0;
+}
+
 /*PROASSETS START*/
 
 .proassets {
